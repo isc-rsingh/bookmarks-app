@@ -1,0 +1,28 @@
+nav {
+    position: fixed;
+    width: 100%;
+    /* height: 36px; */
+    top: 0;
+}
+
+.topnav {
+    margin: 0;
+    background-color: black;
+}
+
+.topnav>li {
+    display: inline;
+    line-height: 36px;
+    padding: 4px 12px;
+}
+
+.topnav>li>a {
+    color: white;
+    font-weight: 800;
+    text-decoration: none;
+}
+
+.topnav>li:hover {
+    border-bottom: 4px solid white;
+    background-color: #333;
+}

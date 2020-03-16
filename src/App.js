@@ -1,26 +1,31 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import { Router } from '@reach/router'
+import Nav from './components/Nav'
+import NewBookmark from './pages/NewBookmark'
+import Bookmarks from './pages/Bookmarks'
 
 function App() {
+  const navLinks = [
+    {
+      text: 'Bookmarks', 
+      path: '/bookmarks'
+    }, 
+    {
+      text: 'New', 
+      path: '/new'
+    }
+  ]
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Nav navLinks = { navLinks } />
+      <div className="spacer" />
+      <Router>
+        <NewBookmark path="/new" />
+        <Bookmarks path="/bookmarks" />
+      </Router>
     </div>
   );
 }
 
-export default App;
+export default App
